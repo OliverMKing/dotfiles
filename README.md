@@ -21,9 +21,11 @@ dotfiles for my Manjaro i3 setup
 ### Dunst
 ![Dunst](https://raw.githubusercontent.com/OliverMKing/dotfiles/master/dunst.png)
 
-## Other Tools 
-Polybar - [Link](https://github.com/jaagr/polybar)
-Pywal - [Link](https://github.com/dylanaraps/pywal)
-URxvt terminal
-Ranger
-Vim
+## Other Utilities 
+
+Polybar - [Link](https://github.com/jaagr/polybar) <br />
+Pywal - [Link](https://github.com/dylanaraps/pywal) <br />
+URxvt terminal <br />
+Ranger <br />
+Vim <br />
+Htop <br />
