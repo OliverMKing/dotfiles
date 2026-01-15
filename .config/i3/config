@@ -170,7 +170,7 @@ bindsym Print exec scrot ~/Pictures/screenshot_%Y-%m-%d_%H-%M-%S.png
 bindsym $mod+Print exec scrot -s ~/Pictures/screenshot_%Y-%m-%d_%H-%M-%S.png
 
 # Lock screen
-bindsym $mod+Escape exec i3lock -c 000000
+bindsym $mod+Escape exec ~/.config/scripts/lock.sh
 
 # Autostart
 exec_always --no-startup-id ~/.config/scripts/autostart.sh

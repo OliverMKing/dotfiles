@@ -8,10 +8,10 @@ cat > ~/.config/dunst/dunstrc << EOF
 [global]
     monitor = 0
     follow = mouse
-    width = (280, 350)
+    width = 300
     height = 100
     origin = top-right
-    offset = 15x50
+    offset = 10x10
     scale = 0
     notification_limit = 5
     progress_bar = true

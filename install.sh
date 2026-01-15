@@ -30,7 +30,6 @@ fi
 # Install i3 ecosystem and desktop utilities
 PACKAGES=(
     i3status
-    i3lock
     polybar
     rofi
     feh
@@ -47,6 +46,23 @@ PACKAGES=(
     fonts-font-awesome
     papirus-icon-theme
     pulseaudio-utils
+    autoconf
+    pkg-config
+    libpam0g-dev
+    libcairo2-dev
+    libfontconfig1-dev
+    libxcb-composite0-dev
+    libev-dev
+    libx11-xcb-dev
+    libxcb-xkb-dev
+    libxcb-xinerama0-dev
+    libxcb-randr0-dev
+    libxcb-image0-dev
+    libxcb-util0-dev
+    libxcb-xrm-dev
+    libxkbcommon-dev
+    libxkbcommon-x11-dev
+    libjpeg-dev
 )
 
 for pkg in "${PACKAGES[@]}"; do
@@ -57,6 +73,19 @@ for pkg in "${PACKAGES[@]}"; do
         echo "$pkg is already installed"
     fi
 done
+
+# Install i3lock-color from source
+if ! i3lock --version 2>&1 | grep -q "i3lock-color"; then
+    echo "Installing i3lock-color..."
+    cd /tmp
+    rm -rf i3lock-color
+    git clone https://github.com/Raymo111/i3lock-color.git
+    cd i3lock-color
+    ./install-i3lock-color.sh
+    cd "$SCRIPT_DIR"
+else
+    echo "i3lock-color is already installed"
+fi
 
 # Install JetBrains Mono font
 if ! fc-list | grep -qi "JetBrains Mono"; then
