@@ -5,7 +5,7 @@
 set $mod Mod4
 
 # Border configuration
-set $thick 4
+set $thick 1
 
 # Default border for all windows
 for_window [class="^.*"] border pixel $thick
