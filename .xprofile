@@ -1,0 +1,12 @@
+#!/bin/bash
+# X session profile - loads pywal colors on X startup
+
+# Load pywal colors into X resources
+if [ -f ~/.cache/wal/colors.Xresources ]; then
+    xrdb -merge ~/.cache/wal/colors.Xresources
+fi
+
+# Apply color sequences for terminals
+if [ -f ~/.cache/wal/sequences ]; then
+    cat ~/.cache/wal/sequences
+fi

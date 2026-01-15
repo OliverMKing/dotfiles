@@ -1,0 +1,83 @@
+configuration {
+    modes: "drun,run,window";
+    show-icons: true;
+    icon-theme: "Papirus";
+    terminal: "alacritty";
+    drun-display-format: "{name}";
+    location: 0;
+    disable-history: false;
+    sorting-method: "normal";
+}
+
+@import "~/.cache/wal/colors-rofi-dark.rasi"
+
+* {
+    font: "JetBrains Mono 11";
+}
+
+window {
+    width: 500px;
+    padding: 10px;
+    border: 2px;
+    border-radius: 10px;
+    border-color: @active-background;
+    background-color: @background;
+}
+
+mainbox {
+    padding: 10px;
+    background-color: transparent;
+}
+
+inputbar {
+    children: [prompt, entry];
+    background-color: transparent;
+    border-radius: 5px;
+    padding: 5px;
+}
+
+prompt {
+    background-color: @active-background;
+    padding: 10px;
+    border-radius: 5px;
+    text-color: @background;
+}
+
+entry {
+    padding: 10px;
+    margin: 0 0 0 10px;
+    text-color: @foreground;
+    background-color: transparent;
+}
+
+listview {
+    border: 0px 0px 0px;
+    padding: 10px 0 0;
+    margin: 10px 0 0;
+    columns: 1;
+    lines: 8;
+    background-color: transparent;
+}
+
+element {
+    padding: 10px;
+    border-radius: 5px;
+    background-color: transparent;
+    text-color: @foreground;
+}
+
+element-icon {
+    size: 24px;
+    margin: 0 10px 0 0;
+}
+
+element selected {
+    background-color: @active-background;
+    text-color: @background;
+}
+
+element-text {
+    background-color: transparent;
+    text-color: inherit;
+    vertical-align: 0.5;
+}

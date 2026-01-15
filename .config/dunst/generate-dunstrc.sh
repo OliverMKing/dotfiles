@@ -1,0 +1,76 @@
+#!/bin/bash
+# Generate dunstrc with pywal colors
+
+# Source pywal colors
+source ~/.cache/wal/colors.sh
+
+cat > ~/.config/dunst/dunstrc << EOF
+[global]
+    monitor = 0
+    follow = mouse
+    width = (280, 350)
+    height = 100
+    origin = top-right
+    offset = 15x50
+    scale = 0
+    notification_limit = 5
+    progress_bar = true
+    indicate_hidden = yes
+    shrink = no
+    separator_height = 2
+    padding = 12
+    horizontal_padding = 12
+    frame_width = 2
+    frame_color = "${color2}"
+    separator_color = frame
+    sort = yes
+    idle_threshold = 120
+    font = JetBrains Mono 10
+    line_height = 0
+    markup = full
+    format = "<b>%s</b>\n%b"
+    alignment = left
+    vertical_alignment = center
+    show_age_threshold = 60
+    word_wrap = yes
+    ellipsize = middle
+    ignore_newline = no
+    stack_duplicates = true
+    hide_duplicate_count = false
+    show_indicators = yes
+    icon_position = left
+    min_icon_size = 0
+    max_icon_size = 48
+    icon_path = /usr/share/icons/Papirus/48x48/status/:/usr/share/icons/Papirus/48x48/devices/
+    sticky_history = yes
+    history_length = 20
+    browser = /usr/bin/xdg-open
+    always_run_script = true
+    corner_radius = 8
+    force_xinerama = false
+    mouse_left_click = close_current
+    mouse_middle_click = do_action, close_current
+    mouse_right_click = close_all
+
+[urgency_low]
+    background = "${color0}CC"
+    foreground = "${color7}"
+    highlight = "${color1}"
+    timeout = 5
+
+[urgency_normal]
+    background = "${color0}CC"
+    foreground = "${color7}"
+    highlight = "${color2}"
+    timeout = 10
+
+[urgency_critical]
+    background = "${color1}CC"
+    foreground = "${color0}"
+    frame_color = "${color1}"
+    timeout = 0
+EOF
+
+# Restart dunst
+killall dunst 2>/dev/null
+dunst &
