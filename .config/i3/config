@@ -60,6 +60,9 @@ bindsym $mod+Tab exec rofi -show window
 # Wallpaper picker
 bindsym $mod+w exec ~/.config/scripts/wallpaper-picker.sh
 
+# Theme color editor (wpgtk)
+bindsym $mod+Shift+w exec wpg
+
 # Change focus
 bindsym $mod+h focus left
 bindsym $mod+j focus down
